@@ -10,13 +10,16 @@
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
     "typeRoots": ["node_modules/@types", "src/typings"],
     "esModuleInterop": true,
     "declaration": false,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node-modules"]

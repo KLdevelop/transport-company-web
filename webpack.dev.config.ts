@@ -4,6 +4,7 @@ import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-serv
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -19,7 +20,14 @@ const config: Configuration = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.json'],
+    modules: ['src', 'node_modules'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, 'tsconfig.json'),
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.json'],
+      }) as never,
+    ],
   },
   devtool: 'inline-source-map', //remove for production
   module: {
@@ -58,7 +66,7 @@ const config: Configuration = {
     static: {
       directory: path.resolve(__dirname, 'dist'),
     },
-    port: 3000,
+    port: 3001,
     hot: true,
     open: true,
   },
