@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 
 export interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -68,16 +69,8 @@ const config: Configuration = {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
+    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/logo/logo.png')),
   ],
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, '../dist'),
-    },
-    port: 3001,
-    hot: true,
-    open: true,
-    historyApiFallback: true,
-  },
   performance: {
     hints: false,
   },
