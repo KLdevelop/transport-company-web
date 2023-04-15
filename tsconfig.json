@@ -10,7 +10,7 @@
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types", "src/typings"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "esModuleInterop": true,
     "declaration": false,
     "strictNullChecks": true,
