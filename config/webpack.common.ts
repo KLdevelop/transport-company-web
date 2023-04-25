@@ -55,7 +55,7 @@ const config: Configuration = {
       },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-        loader: 'url-loader',
+        type: 'asset/resource',
       },
     ],
   },
