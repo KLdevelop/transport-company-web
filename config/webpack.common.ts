@@ -62,6 +62,15 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public', 'index.html'),
+      publicPath: './',
+      minify: {
+        removeComments: !isDev,
+        collapseWhitespace: !isDev,
+      },
+      meta: {
+        viewport:
+          'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+      },
     }),
     new ForkTsCheckerWebpackPlugin({
       devServer: isDev,
