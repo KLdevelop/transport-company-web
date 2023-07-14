@@ -1,7 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { vehicleReducer, vehicleCategoryReducer, vehicleTypeReducer } from './reducers';
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    vehicles: vehicleReducer,
+    vehicleCategories: vehicleCategoryReducer,
+    vehicleTypes: vehicleTypeReducer,
+  },
 });
 
 export default store;
