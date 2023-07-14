@@ -20,7 +20,7 @@ export default merge(common, {
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
-        pathRewrite: { '^/api': '' },
+        // pathRewrite: { '^/api': '/api' },
         secure: false,
         changeOrigin: true,
       },
