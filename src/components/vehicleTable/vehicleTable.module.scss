@@ -10,7 +10,7 @@
 
   .head,
   .row {
-    height: 50px;
+    min-height: 50px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     column-gap: 10px;
