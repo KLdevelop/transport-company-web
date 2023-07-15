@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { MenuItem, Select, SelectChangeEvent, TextField, Button } from '@mui/material';
 import { useAppDispatch, useAppSelector } from 'src/hooks';
-import { fetchVehicleCategories, filterVehicles } from 'src/models/thunks';
+import { fetchVehicleCategories, fetchVehicleTypes, filterVehicles } from 'src/models/thunks';
 import styles from './filterBlock.module.scss';
 
 export const FilterBlock = () => {
@@ -46,6 +46,7 @@ export const FilterBlock = () => {
 
   useEffect(() => {
     dispatch(fetchVehicleCategories());
+    dispatch(fetchVehicleTypes());
   }, [dispatch]);
 
   return (
