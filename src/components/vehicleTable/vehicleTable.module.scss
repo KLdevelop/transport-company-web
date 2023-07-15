@@ -12,11 +12,26 @@
   .row {
     min-height: 50px;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     column-gap: 10px;
     justify-items: center;
     align-items: center;
     border-bottom: 1px solid rgb(138, 134, 134);
     text-overflow: ellipsis;
+  }
+
+  .head {
+    font-weight: 600;
+  }
+
+  .edit,
+  .addVehicle {
+    color: rgb(114, 164, 201);
+  }
+
+  .edit:hover,
+  .addVehicle:hover {
+    cursor: pointer;
+    color: rgb(150, 198, 235);
   }
 }

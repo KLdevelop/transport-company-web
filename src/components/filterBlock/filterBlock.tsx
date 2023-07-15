@@ -1,7 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
+
 import { MenuItem, Select, SelectChangeEvent, TextField, Button } from '@mui/material';
 import { useAppDispatch, useAppSelector } from 'src/hooks';
 import { fetchVehicleCategories, fetchVehicleTypes, filterVehicles } from 'src/models/thunks';
+
 import styles from './filterBlock.module.scss';
 
 export const FilterBlock = () => {
@@ -24,7 +26,11 @@ export const FilterBlock = () => {
   const onModelChange = (e: ChangeEvent<HTMLInputElement>) => setModel(e.target.value);
 
   const [releaseYear, setReleaseYear] = useState('');
-  const onReleaseYearChange = (e: ChangeEvent<HTMLInputElement>) => setReleaseYear(e.target.value);
+  const onReleaseYearChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (!isNaN(+value)) setReleaseYear(value);
+  };
 
   const [selectedHasTrailer, setSelectedHasTrailer] = useState('');
   const onSelectedHasTrailerChange = (e: SelectChangeEvent) =>
@@ -72,6 +78,7 @@ export const FilterBlock = () => {
       <TextField
         label="Год выпуска"
         variant="outlined"
+        // type="number"
         onChange={onReleaseYearChange}
         value={releaseYear}
       />
