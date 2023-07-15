@@ -6,3 +6,12 @@ export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async ()
 
   return vehicles.data;
 });
+
+export const filterVehicles = createAsyncThunk(
+  'vehicles/filterVehicles',
+  async (filter: VehicleFilter) => {
+    const vehicles = await axios.post<Vehicle[]>('/api/vehicles/filter', filter);
+
+    return vehicles.data;
+  },
+);
