@@ -1,0 +1,20 @@
+.filterBlock {
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+
+  div,
+  button {
+    box-sizing: border-box;
+    height: 60px;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
