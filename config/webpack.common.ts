@@ -78,7 +78,7 @@ const config: Configuration = {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/logo/logo.png')),
+    // new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/logo/logo.png')),
   ],
   performance: {
     hints: false,
