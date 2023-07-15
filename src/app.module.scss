@@ -1,9 +1,15 @@
-.app {
-  background-color: rgb(30, 212, 209);
+@use '/src/assets/fonts/Inter/Inter.module.scss';
+
+:global(#app) {
+  font-family: 'Inter';
+  font-size: 16px;
+  display: grid;
+  justify-content: center;
+  color: rgb(44, 44, 44);
 }
 
-html,
-body {
+* {
   margin: 0;
-  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
