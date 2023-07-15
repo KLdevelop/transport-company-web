@@ -15,3 +15,19 @@ export const filterVehicles = createAsyncThunk(
     return vehicles.data;
   },
 );
+
+export const editVehicle = createAsyncThunk('vehicles/editVehicle', async (vehicle: Vehicle) => {
+  const response = await axios.put<Vehicle>('/api/vehicles/edit', vehicle);
+
+  if (response.status !== 200) throw response.statusText;
+
+  return vehicle;
+});
+
+export const addVehicle = createAsyncThunk('vehicles/addVehicle', async (vehicle: Vehicle) => {
+  const response = await axios.post('/api/vehicles/new', vehicle);
+
+  if (response.status !== 200) throw response.statusText;
+
+  return vehicle;
+});
